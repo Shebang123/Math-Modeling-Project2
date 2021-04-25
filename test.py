@@ -26,7 +26,7 @@ class Survivor:
     comfortability = 10 #舒适度
     torch = 0 #火把数量,只在篝火点可以制作
 
-# 地图属性
+# 地图据点属性
 class Map:
     # number表示序号，coordinate表示坐标
     # food_or_bonfire表示食物（1）或篝火（0），supply表示可提供的饱食度或舒适度
