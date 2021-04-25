@@ -1,7 +1,8 @@
+
 import pandas as pd
 
 
-file = "data.csv"
+file = "D:\Shebang\data.csv"
 data = pd.read_csv(file)
 
 list = data.values.tolist()
