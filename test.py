@@ -1,4 +1,7 @@
 import pandas as pd
+from matplotlib import pyplot as plt
+import numpy as np
+from mpl_toolkits.mplot3d import Axes3D
 
 survivor_state = 0 #生或死
 survivor_satiety = 0 #饱食度
@@ -24,20 +27,24 @@ def Initialize_Survivor_State(state, satiety, comfortability, torch):
     survivor_torch = torch
     print(survivor_state, survivor_satiety, survivor_comfortability, survivor_torch)
 
-#获取坐标、食物和篝火信息
+#获取地图坐标、食物和篝火信息
 def Get_Map_Information(file):
     data = pd.read_csv(file)
-    list = data.values.tolist()
-    length = len(list)
+    data = data.values.tolist()
+    length = len(data)
     coordinate = [None] * length
     food_or_bonfire = [None] * length
     supply = [None] * length
     for i in range(length):
-        coordinate[i] = list[i][1:4]
-        food_or_bonfire[i] = int(list[i][4])
-        supply[i] = int(list[i][5])
+        coordinate[i] = data[i][1:4]
+        food_or_bonfire[i] = int(data[i][4])
+        supply[i] = int(data[i][5])
+    return coordinate, food_or_bonfire, supply
+
+#画出路线图
+def Draw_Roadmap():
+    print()
 
 if __name__ == "__main__":
     Initialize_Survivor_State(1, 10, 10, 0)
-    Get_Map_Information("data.csv")
-    Dead_or_Alive(survivor_state)
+    coordinate, food_or_bonfire, supply = Get_Map_Information("data.csv")
