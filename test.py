@@ -36,10 +36,8 @@ def Get_Map_Information(file):
         coordinate[i] = list[i][1:4]
         food_or_bonfire[i] = int(list[i][4])
         supply[i] = int(list[i][5])
-    print(list)
 
 if __name__ == "__main__":
     Initialize_Survivor_State(1, 10, 10, 0)
     Get_Map_Information("data.csv")
     Dead_or_Alive(survivor_state)
-    
