@@ -19,19 +19,4 @@ class Map:
 
 
 if __name__ == "__main__":
-    # print(Map.destination)
-    # draw.Draw_Roadmap("data.csv")
-    # food = 0
-    # bonfire = 0
-    # count_food = 0
-    # count_bonfire = 0
-    # for i in range(len(Map.number)):
-    #     if Map.food_or_bonfire[i] == 1:
-    #         food += Map.supply[i]
-    #         count_food += 1
-    #     else:
-    #         bonfire += Map.supply[i]
-    #         count_bonfire += 1
-    # print("food:", count_food, food)
-    # print("bonfire:", count_bonfire, bonfire)
     tools.Draw_Resource_Node("data.csv")

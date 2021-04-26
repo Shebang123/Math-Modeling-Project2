@@ -93,3 +93,5 @@ def Draw_Resource_Node(file):
         plt.show()
 
 # 画出求生者从起点到终点的路线图
+def Draw_Route():
+    pass
