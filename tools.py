@@ -84,8 +84,6 @@ def Draw_Resource(file):
     # 平面
     elif choice == '0':
         ax = plt.subplot()
-        # fig = plt.figure()
-        # ax = fig.add_subplot(1, 1, 1)
         origin = ax.scatter(origin_X, origin_Y, s = 200, c = 'g', marker = '>')
         destination = ax.scatter(destination_X, destination_Y, s = 200, c = 'g', marker = 'H')
         food = ax.scatter(food_X, food_Y, c = 'r')
