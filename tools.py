@@ -39,7 +39,7 @@ def Get_XYZ(file):
     return cow_X, cow_Y, cow_Z
 
 # 画出所有资源点分布
-def Draw_Resource_Node(file):
+def Draw_Resource(file):
     choice = input("平面选0，空间选1:\n")
     file = "data.csv"
     cow_X, cow_Y, cow_Z = Get_XYZ(file)
@@ -84,10 +84,11 @@ def Draw_Resource_Node(file):
         ax = plt.subplot()
         # fig = plt.figure()
         # ax = fig.add_subplot(1, 1, 1)
-        ax.scatter(origin_X, origin_Y, s = 300, c = 'g', marker = '>')
-        ax.scatter(destination_X, destination_Y, s = 300, c = 'g', marker = 'p')
-        ax.scatter(food_X, food_Y, c = 'r')
-        ax.scatter(bonfire_X, bonfire_Y, c = 'b')
+        origin = ax.scatter(origin_X, origin_Y, s = 300, c = 'g', marker = '>')
+        destination = ax.scatter(destination_X, destination_Y, s = 300, c = 'g', marker = 'p')
+        food = ax.scatter(food_X, food_Y, c = 'r')
+        bonfire = ax.scatter(bonfire_X, bonfire_Y, c = 'b')
+        plt.legend((origin, destination, food, bonfire), ('起点', '终点', '食物', '篝火'))
         ax.set_xlabel('X')  # 设置x坐标轴
         ax.set_ylabel('Y')  # 设置y坐标轴
         plt.show()

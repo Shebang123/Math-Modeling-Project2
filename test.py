@@ -19,4 +19,4 @@ class Map:
 
 
 if __name__ == "__main__":
-    tools.Draw_Resource_Node("data.csv")
+    tools.Draw_Resource("data.csv")
