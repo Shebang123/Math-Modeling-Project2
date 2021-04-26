@@ -3,7 +3,9 @@ import numpy as np
 from mpl_toolkits.mplot3d import Axes3D
 import pandas as pd
 
-plt.rc("font",family='YouYuan')
+plt.rc("font", family='YouYuan')
+plt.rcParams.update({'font.size': 20})
+plt.legend(loc='best')
 
 # 获取地图坐标、食物和篝火信息
 def Get_Map_Information(file):
@@ -70,7 +72,7 @@ def Draw_Resource(file):
     if choice == '1':
         ax = plt.subplot(projection="3d")
         origin = ax.scatter(origin_X, origin_Y, origin_Z, s = 300, c = 'g', marker = '>')
-        destination = ax.scatter(destination_X, destination_Y, destination_Z, s = 300, c = 'g', marker = 'p')
+        destination = ax.scatter(destination_X, destination_Y, destination_Z, s = 300, c = 'g', marker = 'H')
         food = ax.scatter(food_X, food_Y, food_Z, c = 'r')
         bonfire = ax.scatter(bonfire_X, bonfire_Y, bonfire_Z, c = 'b')
         plt.legend((origin, destination, food, bonfire), ('起点', '终点', '食物', '篝火'))
@@ -84,8 +86,8 @@ def Draw_Resource(file):
         ax = plt.subplot()
         # fig = plt.figure()
         # ax = fig.add_subplot(1, 1, 1)
-        origin = ax.scatter(origin_X, origin_Y, s = 300, c = 'g', marker = '>')
-        destination = ax.scatter(destination_X, destination_Y, s = 300, c = 'g', marker = 'p')
+        origin = ax.scatter(origin_X, origin_Y, s = 200, c = 'g', marker = '>')
+        destination = ax.scatter(destination_X, destination_Y, s = 200, c = 'g', marker = 'H')
         food = ax.scatter(food_X, food_Y, c = 'r')
         bonfire = ax.scatter(bonfire_X, bonfire_Y, c = 'b')
         plt.legend((origin, destination, food, bonfire), ('起点', '终点', '食物', '篝火'))
