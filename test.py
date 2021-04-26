@@ -32,11 +32,6 @@ class Map:
     origin = coordinate[0] # 起点
     destination = coordinate[len(coordinate)-1] #终点
 
-# # 描述路线
-# def Draw_Roadmap(*args):
-    
-#     print()
-
 if __name__ == "__main__":
     print(Map.destination)
     draw.Draw_Roadmap("data.csv")
