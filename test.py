@@ -1,5 +1,5 @@
 import pandas as pd
-import dw
+import draw
 
 #获取地图坐标、食物和篝火信息
 def Get_Map_Information(file):
@@ -39,4 +39,4 @@ class Map:
 
 if __name__ == "__main__":
     print(Map.destination)
-    dw.Draw_Roadmap("data.csv")
+    draw.Draw_Roadmap("data.csv")
