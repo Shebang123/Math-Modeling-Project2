@@ -3,6 +3,8 @@ import numpy as np
 from mpl_toolkits.mplot3d import Axes3D
 import pandas as pd
 
+plt.rc("font",family='YouYuan')
+
 # 获取地图坐标、食物和篝火信息
 def Get_Map_Information(file):
     data = pd.read_csv(file)
@@ -45,9 +47,17 @@ def Draw_Resource_Node(file):
     length = len(cow_X)
     food_X = food_Y = food_Z = bonfire_X = bonfire_Y = bonfire_Z = []
 
-    # 区分食物和篝火资源点
+    # 区分食物和篝火资源点，并标注起点和终点
     for i in range(length):
-        if food_or_bonfire[i] == 1:
+        if i == 0:
+            origin_X = cow_X[i]
+            origin_Y = cow_Y[i]
+            origin_Z = cow_Z[i]
+        elif i == length-1:
+            destination_X = cow_X[i]
+            destination_Y = cow_Y[i]
+            destination_Z = cow_Z[i]
+        elif food_or_bonfire[i] == 1:
             food_X = food_X + cow_X[i]
             food_Y = food_Y + cow_Y[i]
             food_Z = food_Z + cow_Z[i]
@@ -59,8 +69,11 @@ def Draw_Resource_Node(file):
     # 空间
     if choice == '1':
         ax = plt.subplot(projection="3d")
-        ax.scatter(food_X, food_Y, food_Z, c = 'r')
-        ax.scatter(bonfire_X, bonfire_Y, bonfire_Z, c = 'b')
+        origin = ax.scatter(origin_X, origin_Y, origin_Z, s = 300, c = 'g', marker = '>')
+        destination = ax.scatter(destination_X, destination_Y, destination_Z, s = 300, c = 'g', marker = 'p')
+        food = ax.scatter(food_X, food_Y, food_Z, c = 'r')
+        bonfire = ax.scatter(bonfire_X, bonfire_Y, bonfire_Z, c = 'b')
+        plt.legend((origin, destination, food, bonfire), ('起点', '终点', '食物', '篝火'))
         ax.set_xlabel('X')  # 设置x坐标轴
         ax.set_ylabel('Y')  # 设置y坐标轴
         ax.set_zlabel('Z')  # 设置z坐标轴
@@ -71,6 +84,8 @@ def Draw_Resource_Node(file):
         ax = plt.subplot()
         # fig = plt.figure()
         # ax = fig.add_subplot(1, 1, 1)
+        ax.scatter(origin_X, origin_Y, s = 300, c = 'g', marker = '>')
+        ax.scatter(destination_X, destination_Y, s = 300, c = 'g', marker = 'p')
         ax.scatter(food_X, food_Y, c = 'r')
         ax.scatter(bonfire_X, bonfire_Y, c = 'b')
         ax.set_xlabel('X')  # 设置x坐标轴
