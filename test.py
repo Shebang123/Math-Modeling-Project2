@@ -1,7 +1,5 @@
 import pandas as pd
-from matplotlib import pyplot as plt
-import numpy as np
-from mpl_toolkits.mplot3d import Axes3D
+import dw
 
 #获取地图坐标、食物和篝火信息
 def Get_Map_Information(file):
@@ -34,10 +32,11 @@ class Map:
     origin = coordinate[0] # 起点
     destination = coordinate[len(coordinate)-1] #终点
 
-# 描述路线
-def Draw_Roadmap(*args):
+# # 描述路线
+# def Draw_Roadmap(*args):
     
-    print()
+#     print()
 
 if __name__ == "__main__":
     print(Map.destination)
+    dw.Draw_Roadmap("data.csv")
