@@ -75,6 +75,7 @@ def Draw_Resource(file):
         destination = ax.scatter(destination_X, destination_Y, destination_Z, s = 300, c = 'g', marker = 'H')
         food = ax.scatter(food_X, food_Y, food_Z, c = 'r')
         bonfire = ax.scatter(bonfire_X, bonfire_Y, bonfire_Z, c = 'b')
+        plt.plot([origin_X, destination_X], [origin_Y, destination_Y], [origin_Z, destination_Z], c = 'r')
         plt.legend((origin, destination, food, bonfire), ('起点', '终点', '食物', '篝火'))
         ax.set_xlabel('X')  # 设置x坐标轴
         ax.set_ylabel('Y')  # 设置y坐标轴
@@ -88,6 +89,7 @@ def Draw_Resource(file):
         destination = ax.scatter(destination_X, destination_Y, s = 200, c = 'g', marker = 'H')
         food = ax.scatter(food_X, food_Y, c = 'r')
         bonfire = ax.scatter(bonfire_X, bonfire_Y, c = 'b')
+        plt.plot([origin_X, destination_X], [origin_Y, destination_Y], c = 'r')
         plt.legend((origin, destination, food, bonfire), ('起点', '终点', '食物', '篝火'))
         ax.set_xlabel('X')  # 设置x坐标轴
         ax.set_ylabel('Y')  # 设置y坐标轴
