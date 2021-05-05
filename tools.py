@@ -2,6 +2,7 @@ from matplotlib import pyplot as plt
 import numpy as np
 from mpl_toolkits.mplot3d import Axes3D
 import pandas as pd
+import linecache
 
 plt.rc("font", family='YouYuan')
 plt.rcParams.update({'font.size': 20})
@@ -41,7 +42,7 @@ def Get_XYZ(file):
     return cow_X, cow_Y, cow_Z
 
 # 画出所有资源点分布
-def Draw_Resource(file):
+def Draw_Resource():
     choice = input("平面选0，空间选1:\n")
     file = "data.csv"
     cow_X, cow_Y, cow_Z = Get_XYZ(file)
@@ -71,12 +72,13 @@ def Draw_Resource(file):
     # 空间
     if choice == '1':
         ax = plt.subplot(projection="3d")
-        origin = ax.scatter(origin_X, origin_Y, origin_Z, s = 300, c = 'g', marker = '>')
-        destination = ax.scatter(destination_X, destination_Y, destination_Z, s = 300, c = 'g', marker = 'H')
-        food = ax.scatter(food_X, food_Y, food_Z, c = 'r')
-        bonfire = ax.scatter(bonfire_X, bonfire_Y, bonfire_Z, c = 'b')
-        plt.plot([origin_X, destination_X], [origin_Y, destination_Y], [origin_Z, destination_Z], c = 'r')
-        plt.legend((origin, destination, food, bonfire), ('起点', '终点', '食物', '篝火'))
+        # origin = ax.scatter(origin_X, origin_Y, origin_Z, s = 300, c = 'g', marker = '>')
+        # destination = ax.scatter(destination_X, destination_Y, destination_Z, s = 300, c = 'g', marker = 'H')
+        # food = ax.scatter(food_X, food_Y, food_Z, c = 'r')
+        # bonfire = ax.scatter(bonfire_X, bonfire_Y, bonfire_Z, c = 'b')
+        # plt.plot([origin_X, destination_X], [origin_Y, destination_Y], [origin_Z, destination_Z], c = 'r')
+        ax.plot_trisurf(food_X, food_Y, food_Z)
+        # plt.legend((origin, destination, food, bonfire), ('起点', '终点', '食物', '篝火'))
         ax.set_xlabel('X')  # 设置x坐标轴
         ax.set_ylabel('Y')  # 设置y坐标轴
         ax.set_zlabel('Z')  # 设置z坐标轴
@@ -89,12 +91,49 @@ def Draw_Resource(file):
         destination = ax.scatter(destination_X, destination_Y, s = 200, c = 'g', marker = 'H')
         food = ax.scatter(food_X, food_Y, c = 'r')
         bonfire = ax.scatter(bonfire_X, bonfire_Y, c = 'b')
-        plt.plot([origin_X, destination_X], [origin_Y, destination_Y], c = 'r')
+        # plt.plot([origin_X, destination_X], [origin_Y, destination_Y], c = 'r')
         plt.legend((origin, destination, food, bonfire), ('起点', '终点', '食物', '篝火'))
         ax.set_xlabel('X')  # 设置x坐标轴
         ax.set_ylabel('Y')  # 设置y坐标轴
-        plt.show()
+        ax.set_aspect(1)
+        # plt.show()
 
 # 画出求生者从起点到终点的路线图
-def Draw_Route():
-    pass
+def Draw_Route(file):
+    Draw_Resource()
+    count=0
+    f = open(file,"r")
+    for line in f.readlines():
+        count = count+1
+
+    temp = [""] * int((count - 1) / 5)
+    test = [""] * int((count - 1) / 5)
+    X = [""] * int((count - 1) / 5)
+    Y = [""] * int((count - 1) / 5)
+    Z = [""] * int((count - 1) / 5)
+    j = 0
+    file_utf8 = file[:-4] + "-utf8.txt"
+    print(file)
+    for i in range(6, count + 1, 5):
+        temp[j] = linecache.getline(file_utf8, i)
+        for nn in temp[j]:
+            if nn == ',':
+                break
+            else:
+                test[j] = test[j] + nn
+        test[j] = int(test[j][6:])
+        j += 1
+
+    j = 0
+    temp = Get_Map_Information("data.csv")[1]
+    for i in test:
+        X[j] = temp[i][0]
+        Y[j] = temp[i][1]
+        Z[j] = temp[i][2]
+        j += 1
+    # plt.plot(X, Y)
+    # print(Z)
+    # plt.plot(X, Y, Z)
+    # plt.show()
+
+Draw_Route("out-problem1.txt")
