@@ -1,0 +1,161 @@
+共32步
+第1步
+X      0.0
+Y    500.0
+Z    500.0
+Name: 0, dtype: float64
+第2步
+X    283.700
+Y    675.103
+Z    640.095
+Name: 163, dtype: float64
+第3步
+X    293.2810
+Y    664.6550
+Z     48.4263
+Name: 171, dtype: float64
+第4步
+X    315.305
+Y    710.491
+Z    301.234
+Name: 183, dtype: float64
+第5步
+X    324.303
+Y    696.879
+Z    135.733
+Name: 190, dtype: float64
+第6步
+X    363.712
+Y    658.484
+Z    333.177
+Name: 212, dtype: float64
+第7步
+X    373.0590
+Y    621.5270
+Z     55.2438
+Name: 215, dtype: float64
+第8步
+X    374.076
+Y    608.570
+Z    278.056
+Name: 217, dtype: float64
+第9步
+X    396.166
+Y    557.686
+Z    463.285
+Name: 230, dtype: float64
+第10步
+X    411.288
+Y    570.336
+Z    190.014
+Name: 241, dtype: float64
+第11步
+X    432.744
+Y    544.693
+Z    464.194
+Name: 254, dtype: float64
+第12步
+X    455.568
+Y    555.961
+Z    852.904
+Name: 264, dtype: float64
+第13步
+X    497.857
+Y    539.374
+Z    473.068
+Name: 296, dtype: float64
+第14步
+X    518.037
+Y    544.067
+Z    478.518
+Name: 307, dtype: float64
+第15步
+X    556.098
+Y    529.713
+Z    480.805
+Name: 326, dtype: float64
+第16步
+X    594.039
+Y    532.547
+Z    476.900
+Name: 338, dtype: float64
+第17步
+X    613.245
+Y    537.372
+Z    480.503
+Name: 345, dtype: float64
+第18步
+X    620.062
+Y    504.626
+Z    962.438
+Name: 351, dtype: float64
+第19步
+X    659.708
+Y    511.743
+Z    932.208
+Name: 381, dtype: float64
+第20步
+X    686.951
+Y    534.936
+Z    468.021
+Name: 402, dtype: float64
+第21步
+X    703.063
+Y    520.512
+Z    467.263
+Name: 411, dtype: float64
+第22步
+X    718.07000
+Y    507.50000
+Z      2.46393
+Name: 422, dtype: float64
+第23步
+X    773.475
+Y    510.402
+Z    181.222
+Name: 460, dtype: float64
+第24步
+X    803.157
+Y    544.765
+Z    446.707
+Name: 479, dtype: float64
+第25步
+X    827.670
+Y    547.777
+Z    447.158
+Name: 501, dtype: float64
+第26步
+X    845.418
+Y    517.689
+Z    906.991
+Name: 508, dtype: float64
+第27步
+X    861.312
+Y    549.221
+Z    333.082
+Name: 514, dtype: float64
+第28步
+X    904.524
+Y    552.094
+Z    445.804
+Name: 537, dtype: float64
+第29步
+X    931.432
+Y    586.848
+Z    651.276
+Name: 551, dtype: float64
+第30步
+X    943.052
+Y    573.799
+Z    883.213
+Name: 558, dtype: float64
+第31步
+X    979.678
+Y    552.128
+Z    452.517
+Name: 576, dtype: float64
+第32步
+X    999.028
+Y    546.140
+Z    452.531
+Name: 586, dtype: float64

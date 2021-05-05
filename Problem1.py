@@ -198,7 +198,7 @@ def A_Star_Search(map, initial_state, goal_state, heuristic):  # initial_state, 
         #print("length of Open_List: ", len(Open_List))
         Actions(map, current_state, goal_state, heuristic, Open_List, Close_List)
         #print('Actions end')
-        list_sort(Open_List, 'f_g') # 'f_g', 'f_distance', 'alive'|'satiety'|'comfortability'
+        list_sort(Open_List, 'comfortability') # 'f_g', 'f_distance', 'alive'|'satiety'|'comfortability'
         #print(Open_List[0].f_g)
     return 0
 
@@ -235,15 +235,11 @@ def Print_Result(final_state, out_txt_path):
 
 if __name__ == "__main__":
     #初始化Problem
-    #map_path = '../Data/data.csv'
-    #out_path = '../Data/out.txt'
     map_path = 'data.csv'
     out_path = 'out.txt'
     MAP = Get_Map(map_path)
     ORIGIN =  Survivor(MAP.loc[0,'X':'Z'])
     DESTINATION = Survivor(MAP.loc[MAP.shape[0]-1,'X':'Z'])
-    #print(ORIGIN.coordinate)
-    #print(DESTINATION.coordinate)
     #采用不同启发式的A*搜索算法
     #H2
     time1_start = time.time()
